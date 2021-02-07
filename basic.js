@@ -1,10 +1,5 @@
 const redux = require('redux');
-
-
 const createStore = redux.createStore;
-
-
-
 
 
 function buyCake() {
@@ -14,13 +9,9 @@ function buyCake() {
   }
 }
 
-
-
 const initalCakeState = {
   numOfCakes: 10
 }
-
-
 
 const cakeReducer = (state = initalCakeState, action) => {
   switch(action.type) {
@@ -42,7 +33,6 @@ console.log('inital state:', store.getState());
 const unscribe = store.subscribe(()=>{
   console.log("updated store: ", store.getState());
 })
-
 
 
 store.dispatch(buyCake())
