@@ -61,14 +61,6 @@ const store = createStore(rootReducer)
 
 
 
-
-
-
-
-
-
-
-
 console.log('inital state:', store.getState());
 
 
