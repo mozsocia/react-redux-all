@@ -1,10 +1,7 @@
 const redux = require('redux');
 
-
 const createStore = redux.createStore;
 const combineReducers = redux.combineReducers;
-
-
 
 
 
@@ -56,8 +53,6 @@ const rootReducer = combineReducers({
 })
 
 const store = createStore(rootReducer)
-
-
 
 
 
