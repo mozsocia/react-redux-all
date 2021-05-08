@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "The post title  ",
+      "body": "dskfj adskfjask djfakj slaskfjaos"
+    },
+    {
+      "id": 2,
+      "title": "2The post title ",
+      "body": "2dskfj adskfjask djfakj slaskfjaos"
+    },
+    {
+      "id": 3,
+      "title": "3The post title",
+      "body": "3dskfj adskfjask djfakj slaskfjaos"
+    },
+    {
+      "id": 4,
+      "title": "4The post title",
+      "body": "3dskfj adskfjask djfakj slaskfjaos"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
