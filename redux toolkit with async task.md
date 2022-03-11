@@ -1,3 +1,6 @@
+link for video details  
+https://youtu.be/DYtYyFOfpBY
+
 #### First have to create a slice 
 ```js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
