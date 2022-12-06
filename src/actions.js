@@ -1,3 +1,5 @@
+import { SET_POSTS, ADD_POST, DELETE_POST } from "./actionTypes"
+
 const urlm = "http://localhost:3001/posts"
 // json-server --watch db.json --port 3001
 
@@ -10,7 +12,7 @@ const actions = {
       .then(res => res.text()) // or res.json()
       .then(res => {
         console.log(res)
-        dispatch({ type: 'DELETE_POST', id: id })
+        dispatch({ type: DELETE_POST, id: id })
       })
       .catch(() => console.log("error"))
 
@@ -26,7 +28,7 @@ const actions = {
       },
       body: JSON.stringify(newpost)
     })
-      .then(dispatch({ type: 'ADD_POST', payload: newpost }))
+      .then((newp) => dispatch({ type: ADD_POST, payload: newp }))
       .catch((err) => console.log(err))
 
 
@@ -37,7 +39,7 @@ const actions = {
     fetch(urlm)
       .then(res => res.json())
       .then((posts) => {
-        dispatch({ type: "SET_POSTS", payload: posts })
+        dispatch({ type: SET_POSTS, payload: posts })
         console.log(urlm);
       })
 

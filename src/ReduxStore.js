@@ -2,6 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 //import logger from 'redux-logger'
 import { produce } from 'immer'
 import thunk from 'redux-thunk';
+import { SET_POSTS, ADD_POST, DELETE_POST } from "./actionTypes"
 
 const iniState = {
   users: ['mozdalif', 'ahiya mun'],
@@ -14,7 +15,7 @@ const iniState = {
 
 const Reducer = (state = iniState, action) => {
 
-  if (action.type === 'DELETE_POST') {
+  if (action.type === DELETE_POST) {
 
     let id = parseInt(action.id)
     const result = produce(state, draft => {
@@ -25,7 +26,7 @@ const Reducer = (state = iniState, action) => {
 
 
 
-  if (action.type === 'SET_POSTS') {
+  if (action.type === SET_POSTS) {
 
     const result = produce(state, draft => {
       draft.posts = action.payload;
@@ -34,7 +35,7 @@ const Reducer = (state = iniState, action) => {
     return result
   }
 
-  if (action.type === 'ADD_POST') {
+  if (action.type === ADD_POST) {
     // const newpost = { id: state.posts.length + 1, ...action.payload }
     const result = produce(state, draft => {
       draft.posts.push(action.payload)
