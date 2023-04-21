@@ -12,15 +12,7 @@ function fetchTodos() {
   return { type: FETCH_TODOS_REQUEST };
 }
 
-function* fetchTodosSaga() {
-  try {
-    const response = yield call(fetch, 'https://jsonplaceholder.typicode.com/todos');
-    const data = yield response.json();
-    yield put({ type: FETCH_TODOS_SUCCESS, payload: data });
-  } catch (error) {
-    yield put({ type: FETCH_TODOS_FAILURE, payload: error.message });
-  }
-}
+
 
 function todosReducer(state = { loading: false, error: null, todos: [] }, action) {
   switch (action.type) {
@@ -32,6 +24,16 @@ function todosReducer(state = { loading: false, error: null, todos: [] }, action
       return { ...state, loading: false, error: action.payload };
     default:
       return state;
+  }
+}
+
+function* fetchTodosSaga() {
+  try {
+    const response = yield call(fetch, 'https://jsonplaceholder.typicode.com/todos');
+    const data = yield response.json();
+    yield put({ type: FETCH_TODOS_SUCCESS, payload: data });
+  } catch (error) {
+    yield put({ type: FETCH_TODOS_FAILURE, payload: error.message });
   }
 }
 
