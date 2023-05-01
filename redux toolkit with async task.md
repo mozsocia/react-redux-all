@@ -78,6 +78,37 @@ export default goalSlice.reducer
 
 ```
 
+```js
+import { configureStore } from '@reduxjs/toolkit'
+import authReducer from '../features/auth/authSlice'
+import goalReducer from '../features/goals/goalSlice'
+
+export const store = configureStore({
+  reducer: {
+    auth: authReducer,
+    goals: goalReducer,
+  },
+})
+```
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import { store } from './app/store';
+import { Provider } from 'react-redux';
+
+
+ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+  document.getElementById('root')
+);
+
+```
+
 
 #### Now dispatch actions 
 ```js
